@@ -12,13 +12,13 @@ ___
 ## Running images docker
 
 ```sh
-docker run -it --rm -p 8080:80 dvwa-docker
+docker run --rm -p 8080:80 dvwa-docker
 ```
 ___
 ## Running Docker Container
 
 ```
-chanaseptiari/dvwa-docker
+docker run --rm -p 8080:80 chanaseptiari/dvwa-docker
 ```
 
 ## Referensi
