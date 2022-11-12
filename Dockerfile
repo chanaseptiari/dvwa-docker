@@ -13,7 +13,8 @@ RUN apt-get update && \
     php \
     php-mysqli \
     php-gd \
-    libapache2-mod-php && \
+    libapache2-mod-php \
+    git && \
     rm /var/www/html/index.html
 
 # MariaDB root pasword 
@@ -21,8 +22,10 @@ RUN echo mariadb-server mysql-server/root_password password vulnerables | debcon
     echo mariadb-server mysql-server/root_password_again password vulnerables | debconf-set-selections 
 
 # Copy required files 
-COPY DVWA /var/www/html/
+RUN git clone https://github.com/digininja/DVWA /var/www/html/
+# COPY DVWA /var/www/html/
 COPY config.inc.php /var/www/html/config/
+COPY .env /var/www/html/config/
 COPY php.ini /etc/php/7.4/apache2/php.ini
 COPY php.ini /etc/php/7.4/cli/php.ini
 
