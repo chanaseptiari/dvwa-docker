@@ -4,12 +4,12 @@ LABEL maintainer="chanaso"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Set default security level
-ENV default_security_level='low'
-
 # envitorment for captcha
 ENV recaptcha_public_key=''
 ENV recaptcha_private_key=''
+
+# Set default security level
+ENV default_security_level='low'
 
 # Install Depedensi
 RUN apt-get update && \
