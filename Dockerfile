@@ -1,8 +1,12 @@
-FROM ubuntu:20.04
+FROM docker.io/library/ubuntu:18.04
 
 LABEL maintainer="chanaso"
 
 ENV DEBIAN_FRONTEND=noninteractive
+
+# envitorment for captcha
+ENV recaptcha_public_key=''
+ENV recaptcha_private_key=''
 
 # Install Depedensi
 RUN apt-get update && \
