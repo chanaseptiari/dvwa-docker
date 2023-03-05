@@ -8,11 +8,17 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV recaptcha_public_key=''
 ENV recaptcha_private_key=''
 
-# Set default security level
+# Set default value security level
 ENV default_security_level='low'
 
-# Set dedault 
+# Set default value of phpids level
 ENV default_phpids_level='disabled'
+
+# Set default value of phpids verbose
+ENV default_phpids_verbose='false'
+
+# Set default value of locale
+ENV default_locale='en'
 
 # Install Depedensi
 RUN apt-get update && \
