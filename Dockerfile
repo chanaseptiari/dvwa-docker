@@ -39,11 +39,12 @@ RUN echo mariadb-server mysql-server/root_password password vulnerables | debcon
 
 # Copy required files 
 RUN git clone https://github.com/digininja/DVWA /var/www/html/
+
 # COPY DVWA /var/www/html/
 COPY config.inc.php /var/www/html/config/
 COPY .env /var/www/html/config/
-COPY php.ini /etc/php/7.4/apache2/php.ini
-COPY php.ini /etc/php/7.4/cli/php.ini
+COPY php.ini /etc/php/7.2/apache2/php.ini
+COPY php.ini /etc/php/7.2/cli/php.ini
 
 # Change Owner Folder
 RUN chown www-data:www-data -R /var/www/html
