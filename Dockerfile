@@ -1,8 +1,24 @@
-FROM ubuntu:20.04
+FROM docker.io/library/ubuntu:18.04
 
 LABEL maintainer="chanaso"
 
 ENV DEBIAN_FRONTEND=noninteractive
+
+# envitorment for captcha
+ENV recaptcha_public_key=''
+ENV recaptcha_private_key=''
+
+# Set default value security level
+ENV default_security_level='low'
+
+# Set default value of phpids level
+ENV default_phpids_level='disabled'
+
+# Set default value of phpids verbose
+ENV default_phpids_verbose='false'
+
+# Set default value of locale
+ENV default_locale='en'
 
 # Install Depedensi
 RUN apt-get update && \
@@ -23,11 +39,12 @@ RUN echo mariadb-server mysql-server/root_password password vulnerables | debcon
 
 # Copy required files 
 RUN git clone https://github.com/digininja/DVWA /var/www/html/
+
 # COPY DVWA /var/www/html/
 COPY config.inc.php /var/www/html/config/
 COPY .env /var/www/html/config/
-COPY php.ini /etc/php/7.4/apache2/php.ini
-COPY php.ini /etc/php/7.4/cli/php.ini
+COPY php.ini /etc/php/7.2/apache2/php.ini
+COPY php.ini /etc/php/7.2/cli/php.ini
 
 # Change Owner Folder
 RUN chown www-data:www-data -R /var/www/html

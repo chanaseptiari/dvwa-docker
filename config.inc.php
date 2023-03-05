@@ -30,12 +30,12 @@ $_DVWA['recaptcha_private_key'] = getenv('recaptcha_private_key');
 # Default security level
 #   Default value for the security level with each session.
 #   The default is 'impossible'. You may wish to set this to either 'low', 'medium', 'high' or impossible'.
-$_DVWA['default_security_level'] = 'low';
+$_DVWA['default_security_level'] = getenv('default_security_level');
 
 # Default PHPIDS status
 #   PHPIDS status with each session.
 #   The default is 'disabled'. You can set this to be either 'enabled' or 'disabled'.
-$_DVWA['default_phpids_level'] = 'disabled';
+$_DVWA['default_phpids_level'] = getenv('default_phpids_level');
 
 # Verbose PHPIDS messages
 #   Enabling this will show why the WAF blocked the request on the blocked request.
