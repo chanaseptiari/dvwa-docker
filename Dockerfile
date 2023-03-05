@@ -11,6 +11,9 @@ ENV recaptcha_private_key=''
 # Set default security level
 ENV default_security_level='low'
 
+# Set dedault 
+ENV default_phpids_level='disabled'
+
 # Install Depedensi
 RUN apt-get update && \
     apt-get upgrade -y && \
