@@ -26,6 +26,12 @@ ___
 docker run --rm -p 8080:80 chanaseptiari/dvwa-docker
 ```
 
+## Optional Running
+
+```sh
+podman run --rm -p 8080:80 dvwa-docker -e "recaptcha_public_key=''" -e "recaptcha_private_key=''" -e "default_security_level=low" -e "default_phpids_level=disabled" -e "default_phpids_level=false" -e "default_phpids_level=en"
+```
+
 ## Referensi
 
 Source Code : [digininja/DVWA](https://github.com/digininja/DVWA)
