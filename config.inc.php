@@ -40,12 +40,12 @@ $_DVWA['default_phpids_level'] = getenv('default_phpids_level');
 # Verbose PHPIDS messages
 #   Enabling this will show why the WAF blocked the request on the blocked request.
 #   The default is 'disabled'. You can set this to be either 'true' or 'false'.
-$_DVWA['default_phpids_verbose'] = 'false';
+$_DVWA['default_phpids_verbose'] = getenv('default_phpids_verbose');
 
 # Default locale
 #   Default locale for the help page shown with each session.
 #   The default is 'en'. You may wish to set this to either 'en' or 'zh'.
-$_DVWA['default_locale'] = 'en';
+$_DVWA['default_locale'] = getenv('default_locale');
 
 define("MYSQL", "mysql");
 define("SQLITE", "sqlite");
